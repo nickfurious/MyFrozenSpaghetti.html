@@ -1,0 +1,90 @@
+.image-container {
+  background-image: url(./img/frosenSpaghetti.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  height: 700px;
+  width: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.frosted-container {
+  position: relative;
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+  border-radius: 5px;
+  width: 50%;
+  height: 50%;
+  z-index: 1;
+/* inheriting backgrounds is important for this to work */
+  background: inherit;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 300;
+  color: rgb(172, 19, 19);
+}
+
+.frosted-container:before {
+  content: '';
+  position: absolute; 
+  /* inheriting backgrounds is important for this to work */
+  background: inherit;
+  box-shadow: inset 0 0 250px rgba(255, 255, 255, .5);
+  /* play with blur values per your need */
+  filter: 10px;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+/* Google font */
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
+body {
+  background-color: rgba(0,0,0,0.1);
+}
+
+/* styling paper */
+#paper {
+  width: 600px;
+  height: 700px;
+  position: relative;
+  margin: 20px auto;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: white;
+  box-shadow: 0px 0px 5px 0px #888;
+}
+
+/* styling red vertical line */
+#paper::before {
+  content: '';
+  width: 2px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 40px;
+  background-color: rgba(255,0,0,0.6);
+}
+
+/* styling blue horizontal lines */
+#pattern {
+  height: 100%;
+  background-image: repeating-linear-gradient(white 0px, white 24px, teal 25px);
+}
+
+/* styling text content */
+#content {
+  padding-top: 6px;
+  padding-left: 56px;
+  padding-right: 16px;
+  line-height: 25px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 19px;
+  letter-spacing: 1px;
+  word-spacing: 5px;
+}
